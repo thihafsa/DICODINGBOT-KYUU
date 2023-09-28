@@ -5866,7 +5866,7 @@ Copy the link above and type the .ytmp3 link for audio and the .ytmp4 link for v
             })
         }
         break
-        case 'ytvxxx':
+        case 'ytv':
         case 'ytmp4xxx':
         case 'mp4xxx': {
             if (!text) return replygcxeon('Enter the link!!!')
@@ -5874,7 +5874,7 @@ Copy the link above and type the .ytmp3 link for audio and the .ytmp4 link for v
             downloadMp4(text)
         }
         break
-        case 'ytaxxx':
+        case 'yta':
         case 'ytmp3xxx':
         case 'mp3xxx': {
             if (!text) return replygcxeon('Enter the link!!!')

@@ -22,6 +22,8 @@ COPY . .
 # Instal pm2 secara global
 RUN npm i -g pm2
 
+RUN npm i -g ytdl-core
+
 # Instal dependensi proyek
 RUN npm install
 

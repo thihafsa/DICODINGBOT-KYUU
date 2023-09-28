@@ -35,8 +35,8 @@
     "crypto": "^1.0.1",
     "dotenv": "^16.3.1",
     "emoji-api": "^1.0.2",
-    "ffmpeg-static": "^4.4.0",
     "fake-useragent": "^1.0.1",
+    "ffmpeg-static": "^4.4.0",
     "figlet": "^1.5.0",
     "file-type": "^16.5.3",
     "fluent-ffmpeg": "^2.1.2",
@@ -85,8 +85,7 @@
     "util": "^0.12.4",
     "yargs": "^17.2.1",
     "youtube-yts": "^2.0.0",
-    "youtubedl-core": "^4.11.4",
-    "ytdl-core": "^4.11.4"
+    "youtubedl-core": "^4.11.4"
   },
   "repository": {
     "type": "git",
