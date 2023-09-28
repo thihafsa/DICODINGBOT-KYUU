@@ -1,6 +1,8 @@
 const chalk = require("chalk")
 const fs = require("fs")
+const dotenv = require('dotenv')
 
+dotenv.config();
 
 //
 global.domain = 'kyuu.tokopannep.xyz'
@@ -16,7 +18,7 @@ global.doc6 = 'application/vnd.android.package-archive'
 
 global.wtf = 'kikyy'
 //if api key expire, u can generate one from here: https://beta.openai.com/account/api-keys
-global.keyopenai = 
+global.keyopenai = process.env.OPENAI_API_KEY
 
 //batas
 global.APIKeys = {
