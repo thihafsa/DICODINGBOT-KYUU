@@ -5,8 +5,7 @@ RUN apt-get update && \
   apt-get install -y \
   neofetch \
   coreutils \
-  ffmpeg && \
-  rm -rf /var/lib/apt/lists/*
+  ffmpeg &&
   
 COPY package.json .
 COPY . .
