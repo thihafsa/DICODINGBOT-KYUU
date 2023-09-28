@@ -31,7 +31,7 @@ global.ownernomer = "6282144323683" //ur owner number2
 global.ownername = "Deni Setiawan" //ur owner name
 global.ytname = "hmm" //ur yt chanel name
 global.socialm = "jgn spam owner njg" //ur github or insta name
-global.location = "Sulawesi Selatan, Indonesia " //ur location
+global.location = "Nusa Tenggara Barat, Indonesia " //ur location
 
 //new
 global.botname = "DICODING BOT"

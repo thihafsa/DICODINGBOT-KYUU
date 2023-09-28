@@ -5245,23 +5245,37 @@ replygcxeon(`Photo/Video?`)
 }
 }
 break
-case 'sticker': 
+case 'sticker':
 case 's': {
-if (!quoted) return replygcxeon(`Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds`)
-if (/image/.test(mime)) {
-let media = await quoted.download()
-let encmedia = await Kyuu.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
-await fs.unlinkSync(encmedia)
-} else if (/video/.test(mime)) {
-if ((quoted.msg || quoted).seconds > 11) return replygcxeon('Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds')
-let media = await quoted.download()
-let encmedia = await Kyuu.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
-await fs.unlinkSync(encmedia)
-} else {
-replygcxeon(`Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds`)
+    if (!quoted) return replygcxeon(`Send/Reply Images/Videos/Gifs With Captions ${prefix + command}\nVideo Duration 1-9 Seconds`);
+    if (/image/.test(mime)) {
+        let media = await quoted.download();
+        let encmedia = await Kyuu.sendImageAsSticker(m.chat, media, m, {
+            packname: global.packname,
+            author: global.author
+        });
+        if (encmedia) {
+            await fs.unlinkSync(encmedia);
+        } else {
+            console.error('Failed to create sticker');
+        }
+    } else if (/video/.test(mime)) {
+        if ((quoted.msg || quoted).seconds > 11) return replygcxeon('Send/Reply Images/Videos/Gifs With Captions ${prefix + command}\nVideo Duration 1-9 Seconds');
+        let media = await quoted.download();
+        let encmedia = await Kyuu.sendVideoAsSticker(m.chat, media, m, {
+            packname: global.packname,
+            author: global.author
+        });
+        if (encmedia) {
+            await fs.unlinkSync(encmedia);
+        } else {
+            console.error('Failed to create sticker');
+        }
+    } else {
+        replygcxeon(`Send/Reply Images/Videos/Gifs With Captions ${prefix + command}\nVideo Duration 1-9 Seconds`);
+    }
 }
-}
-break
+break;
 case 'stupid':
       case 'foolish':
       case 'smart':
