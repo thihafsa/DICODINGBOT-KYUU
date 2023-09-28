@@ -10,6 +10,9 @@ RUN apt-get install -y \
   coreutils \
   ffmpeg
 
+# Membuat direktori kerja di dalam kontainer
+WORKDIR /app
+
 # Menyalin package.json terlebih dahulu (untuk cache jika package.json tidak berubah, Docker akan menggunakan layer cache)
 COPY package.json .
 
@@ -23,4 +26,4 @@ RUN npm i -g pm2
 RUN npm install
 
 # Jalankan aplikasi dengan pm2-runtime
-CMD pm2-runtime .
+CMD ["pm2-runtime", "."]
