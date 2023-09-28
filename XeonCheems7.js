@@ -1,7 +1,7 @@
 require('./settings')
 require('./lib/listmenu')
 const { modul } = require('./module');
-const { os, axios, baileys, chalk, cheerio, child_process, crypto, cookie, FormData, FileType, fetch, fs, fsx, ffmpeg, Jimp, jsobfus, PhoneNumber, process, moment, ms, speed, syntaxerror, util, ytdl } = modul;
+const { os, axios, baileys, chalk, cheerio, child_process, crypto, cookie, FormData, FileType, fetch, fs, fsx, Jimp, jsobfus, PhoneNumber, process, moment, ms, speed, syntaxerror, util, ytdl } = modul;
 const { exec, spawn, execSync } = child_process
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = baileys
 const { clockString, formatp, tanggal, getTime, isUrl, sleep, runtime, fetchJson, getBuffer, jsonformat, format, reSize, generateProfilePicture } = require('./lib/myfunc')
@@ -36,7 +36,8 @@ const ImageXeon = JSON.parse(fs.readFileSync('./XeonMedia/database/xeonimage.jso
 const VideoXeon = JSON.parse(fs.readFileSync('./XeonMedia/database/xeonvideo.json'))
 const BadXeon = JSON.parse(fs.readFileSync('./database/bad.json'))
 const contacts = JSON.parse(fs.readFileSync("./database/contacts.json"))
-
+const ffmpeg = require('fluent-ffmpeg');
+ffmpeg.setFfmpegPath('./ffmpeg/bin/');
 let autosticker = JSON.parse(fs.readFileSync('./database/autosticker.json'));
 let ntnsfw = JSON.parse(fs.readFileSync('./database/nsfw.json'));
 let ntvirtex = JSON.parse(fs.readFileSync('./database/antivirus.json'));
